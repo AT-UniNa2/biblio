@@ -1,7 +1,31 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app metadata-complete="true">
+  <servlet>
+      <servlet-name>Book Resource</servlet-name>
+      <servlet-class>com.github.helloiampau.biblio.BookResource</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>Book Resource</servlet-name>
+      <url-pattern>/book/*</url-pattern>
+  </servlet-mapping>
+    <servlet>
+        <servlet-name>Books Resource</servlet-name>
+        <servlet-class>com.github.helloiampau.biblio.BooksResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Books Resource</servlet-name>
+        <url-pattern>/books/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Token Resource</servlet-name>
+        <servlet-class>com.github.helloiampau.biblio.TokenResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Token Resource</servlet-name>
+        <url-pattern>/token/*</url-pattern>
+    </servlet-mapping>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <listener>
+        <listener-class>com.github.helloiampau.biblio.util.DBHandler</listener-class>
+    </listener>
+    <display-name>Archetype Created Web Application</display-name>
 </web-app>
