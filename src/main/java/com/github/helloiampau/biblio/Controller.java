@@ -34,7 +34,7 @@ public abstract class Controller extends HttpServlet {
     Object value;
 
     try {
-      Field modelField = Book.class.getDeclaredField(key);
+      Field modelField = modelClass.getDeclaredField(key);
       Class fieldClass = modelField.getType();
       if(fieldClass.getName().equals("java.lang.String"))
         value = request.getParameter(key);

@@ -1,6 +1,7 @@
 package com.github.helloiampau.biblio.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * biblio
@@ -9,7 +10,7 @@ import javax.persistence.*;
  * 19 October 2014.
  */
 @Entity
-public class Author extends Model {
+public class Author extends JsonObject {
 
   @Id
   @GeneratedValue(strategy= GenerationType.AUTO)
@@ -19,6 +20,8 @@ public class Author extends Model {
   private String name;
   @Column(nullable=false)
   private String surname;
+  @OneToMany(mappedBy="author")
+  private Set<Book> books;
 
   public Long getId() {
     return id;
